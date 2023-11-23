@@ -5,10 +5,13 @@ interface ObserverProps {
   onContentEndVisible: () => void;
 }
 
+// Опишіть Props
 export function Observer({ children, onContentEndVisible }: ObserverProps) {
+  // Вкажіть правильний тип для useRef зверніть увагу, в який DOM елемент ми його передаємо
   const endContentRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    // Вкажіть правильний тип для options, підказка, клас також можна вказувати як тип
     const options: IntersectionObserverInit = {
       rootMargin: "0px",
       threshold: 1.0,
